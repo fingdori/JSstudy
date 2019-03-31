@@ -36,3 +36,2155 @@ query front-end modify and run
  make[1]: *** [src/frontends/CMakeFiles/query_frontend.dir/rule] Error 2
  Makefile:275: recipe for target 'query_frontend' failed
  make: *** [query_frontend] Error 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ root@linuxkit-025000000001:/clipper/clipper# ./configure --cleanup-quiet
+ Force-removing release and debug folders
+ root@linuxkit-025000000001:/clipper/clipper# ./configure --release
+ Sun Mar 31 14:04:58 UTC 2019
+ Testing existing cmake version...
+ Detected 3.7.2.. . Required 3.2.3
+ CMake version is good
+ mkdir: cannot create directory ‘deps’: Device or resource busy
+ ======================= BUILD CONFIGURATION ========================
+ System Information:
+ #1 SMP Fri Sep 7 08:20:28 UTC 2018
+ Compiler Information:
+ gcc (Debian 6.3.0-18+deb9u1) 6.3.0 20170516
+ Copyright (C) 2016 Free Software Foundation, Inc.
+ This is free software; see the source for copying conditions.  There is NO
+ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+ g++ (Debian 6.3.0-18+deb9u1) 6.3.0 20170516
+ Copyright (C) 2016 Free Software Foundation, Inc.
+ This is free software; see the source for copying conditions.  There is NO
+ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+ cmake version 3.7.2
+
+ CMake suite maintained and supported by Kitware (kitware.com/cmake).
+ ======================= Config File ================================
+
+
+
+ ======================= Release ========================
+ cmake -D CMAKE_BUILD_TYPE=Release ../
+ -- The CXX compiler identification is GNU 6.3.0
+ -- Check for working CXX compiler: /usr/bin/c++
+ -- Check for working CXX compiler: /usr/bin/c++ -- works
+ -- Detecting CXX compiler ABI info
+ -- Detecting CXX compiler ABI info - done
+ -- Detecting CXX compile features
+ -- Detecting CXX compile features - done
+ -- Found ZeroMQ: /usr/lib/x86_64-linux-gnu/libzmq.so (found version "4.2.1")
+ -- Looking for C++ include pthread.h
+ -- Looking for C++ include pthread.h - found
+ -- Looking for pthread_create
+ -- Looking for pthread_create - not found
+ -- Looking for pthread_create in pthreads
+ -- Looking for pthread_create in pthreads - not found
+ -- Looking for pthread_create in pthread
+ -- Looking for pthread_create in pthread - found
+ -- Found Threads: TRUE
+ -- Boost version: 1.62.0
+ -- Found the following Boost libraries:
+ --   thread
+ --   system
+ --   chrono
+ --   date_time
+ --   atomic
+ -- Found Folly: /usr/local/include
+ -- Found cityhash: /usr/local/lib/libcityhash.so
+ Cloning into 'googletest-src'...
+ Already on 'master'
+ CMake Warning (dev) at release/googletest-src/CMakeLists.txt:3 (project):
+   Policy CMP0048 is not set: project() command manages VERSION variables.
+   Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+   command to set the policy and suppress this warning.
+
+   The following variable(s) would be set to empty:
+
+     PROJECT_VERSION
+     PROJECT_VERSION_MAJOR
+     PROJECT_VERSION_MINOR
+     PROJECT_VERSION_PATCH
+ This warning is for project developers.  Use -Wno-dev to suppress it.
+
+ -- The C compiler identification is GNU 6.3.0
+ -- Check for working C compiler: /usr/bin/cc
+ -- Check for working C compiler: /usr/bin/cc -- works
+ -- Detecting C compiler ABI info
+ -- Detecting C compiler ABI info - done
+ -- Detecting C compile features
+ -- Detecting C compile features - done
+ -- Found PythonInterp: /usr/bin/python (found version "2.7.13")
+ -- Found ZeroMQ: /usr/lib/x86_64-linux-gnu/libzmq.so (found suitable version "4.2.1", minimum required is "4.1")
+  *****************************************************************************
+  *** DLIB GUI SUPPORT DISABLED BECAUSE X11 DEVELOPMENT LIBRARIES NOT FOUND ***
+  *** Make sure libx11-dev is installed if you want GUI support.            ***
+  *** On Ubuntu run: sudo apt-get install libx11-dev                        ***
+  *****************************************************************************
+ -- Searching for BLAS and LAPACK
+ -- Searching for BLAS and LAPACK
+ -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29")
+ -- Checking for module 'cblas'
+ --   No package 'cblas' found
+ -- Checking for module 'lapack'
+ --   No package 'lapack' found
+ -- Looking for sys/types.h
+ -- Looking for sys/types.h - found
+ -- Looking for stdint.h
+ -- Looking for stdint.h - found
+ -- Looking for stddef.h
+ -- Looking for stddef.h - found
+ -- Check size of void*
+ -- Check size of void* - done
+  *****************************************************************************
+  *** No BLAS library found so using dlib's built in BLAS.  However, if you ***
+  *** install an optimized BLAS such as OpenBLAS or the Intel MKL your code ***
+  *** will run faster.  On Ubuntu you can install OpenBLAS by executing:    ***
+  ***    sudo apt-get install libopenblas-dev liblapack-dev                 ***
+  *** Or you can easily install OpenBLAS from source by downloading the     ***
+  *** source tar file from http://www.openblas.net, extracting it, and      ***
+  *** running:                                                              ***
+  ***    make; sudo make install                                            ***
+  *****************************************************************************
+ CUDA_TOOLKIT_ROOT_DIR not found or specified
+ -- Could NOT find CUDA (missing:  CUDA_TOOLKIT_ROOT_DIR CUDA_NVCC_EXECUTABLE CUDA_INCLUDE_DIRS CUDA_CUDART_LIBRARY) (Required is at least version "7.5")
+ -- Disabling CUDA support for dlib.  DLIB WILL NOT USE CUDA
+ -- C++11 activated.
+ -- Found hiredis: /usr/lib/x86_64-linux-gnu/libhiredis.so
+ -- Found libev: /usr/lib/x86_64-linux-gnu/libev.so
+ Building for x86_64
+ -- Configuring done
+ -- Generating done
+ -- Build files have been written to: /clipper/clipper/release
+ root@linuxkit-025000000001:/clipper/clipper# make -j2 query_frontend^C
+ root@linuxkit-025000000001:/clipper/clipper# cd release/
+ root@linuxkit-025000000001:/clipper/clipper/release# make -j2 query_frontend
+ Scanning dependencies of target redox
+ Scanning dependencies of target dlib
+ [  1%] Building CXX object src/libs/redox/CMakeFiles/redox.dir/src/client.cpp.o
+ [  1%] Building CXX object src/libs/redox/CMakeFiles/redox.dir/src/command.cpp.o
+ [  2%] Building CXX object src/libs/redox/CMakeFiles/redox.dir/src/subscriber.cpp.o
+ [  2%] Building CXX object src/libs/redox/CMakeFiles/redox.dir/src/utils/logger.cpp.o
+ [  4%] Linking CXX shared library libredox.so
+ [  4%] Built target redox
+ [  4%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/base64/base64_kernel_1.cpp.o
+ [  5%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/bigint/bigint_kernel_1.cpp.o
+ [  5%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/bigint/bigint_kernel_2.cpp.o
+ [  6%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/bit_stream/bit_stream_kernel_1.cpp.o
+ [  6%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/entropy_decoder/entropy_decoder_kernel_1.cpp.o
+ [  8%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/entropy_decoder/entropy_decoder_kernel_2.cpp.o
+ [  8%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/entropy_encoder/entropy_encoder_kernel_1.cpp.o
+ [  9%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/entropy_encoder/entropy_encoder_kernel_2.cpp.o
+ [  9%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/md5/md5_kernel_1.cpp.o
+ [ 10%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/tokenizer/tokenizer_kernel_1.cpp.o
+ [ 12%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/unicode/unicode.cpp.o
+ [ 12%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/data_io/image_dataset_metadata.cpp.o
+ [ 13%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/data_io/mnist.cpp.o
+ In file included from /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_utilities.h:17:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/point_transforms.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry.h:10,
+                  from /clipper/clipper/src/libs/dlib/dlib/data_io/image_dataset_metadata.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/data_io/image_dataset_metadata.cpp:6:
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:21:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sqrt, sqrt, std::sqrt ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:22:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log, log, std::log ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:23:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log10, log10, std::log10 ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:24:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_exp, exp, std::exp ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:26:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_conj, conj, std::conj ,2);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:28:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_ceil, ceil, std::ceil ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:29:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_floor, floor, std::floor ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:31:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sin, sin, std::sin ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:32:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cos, cos, std::cos ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:33:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tan, tan, std::tan ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:34:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sinh, sinh, std::sinh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:35:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cosh, cosh, std::cosh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:36:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tanh, tanh, std::tanh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:37:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_asin, asin, std::asin ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:38:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_acos, acos, std::acos ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:39:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_atan, atan, std::atan ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:160:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sigmoid, sigmoid, impl::sigmoid, 7);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:161:83: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_round_zeros, round_zeros, impl::round_zeros_eps, 7);
+                                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:162:79: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_round_zeros2, round_zeros, impl::round_zeros, 7);
+                                                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:163:60: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cubed, cubed, impl::cubed, 7);
+                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:164:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_squared, squared, impl::squared, 6);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:165:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sign, sign, impl::sign, 6);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:166:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_pow1, pow, impl::pow1, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:167:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_SM(op_pow2, pow, impl::pow2, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:168:75: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal, reciprocal, impl::reciprocal, 6);
+                                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../geometry/../matrix/matrix_math_functions.h:169:87: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal_max, reciprocal_max, impl::reciprocal_max, 6);
+                                                                                        ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_utilities.h:17:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/data_io/mnist.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/data_io/mnist.cpp:6:
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:21:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sqrt, sqrt, std::sqrt ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:22:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log, log, std::log ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:23:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log10, log10, std::log10 ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:24:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_exp, exp, std::exp ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:26:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_conj, conj, std::conj ,2);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:28:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_ceil, ceil, std::ceil ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:29:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_floor, floor, std::floor ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:31:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sin, sin, std::sin ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:32:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cos, cos, std::cos ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:33:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tan, tan, std::tan ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:34:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sinh, sinh, std::sinh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:35:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cosh, cosh, std::cosh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:36:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tanh, tanh, std::tanh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:37:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_asin, asin, std::asin ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:38:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_acos, acos, std::acos ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:39:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_atan, atan, std::atan ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:160:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sigmoid, sigmoid, impl::sigmoid, 7);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:161:83: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_round_zeros, round_zeros, impl::round_zeros_eps, 7);
+                                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:162:79: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_round_zeros2, round_zeros, impl::round_zeros, 7);
+                                                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:163:60: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cubed, cubed, impl::cubed, 7);
+                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:164:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_squared, squared, impl::squared, 6);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:165:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sign, sign, impl::sign, 6);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:166:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_pow1, pow, impl::pow1, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:167:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_SM(op_pow2, pow, impl::pow2, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:168:75: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal, reciprocal, impl::reciprocal, 6);
+                                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/data_io/../matrix/matrix_math_functions.h:169:87: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal_max, reciprocal_max, impl::reciprocal_max, 6);
+                                                                                        ^
+ [ 13%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/global_optimization/global_function_search.cpp.o
+ In file included from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/function.h:14,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/svm.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/svm_c_linear_dcd_trainer.h:12,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/upper_bound_function.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.h:11,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:2:
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics/../optimization/optimization_solve_qp_using_smo.h:621:41: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(Q_blocks.size() > 0);
+                                          ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/function.h:14,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/svm.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/svm_c_linear_dcd_trainer.h:12,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/upper_bound_function.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.h:11,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:2:
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics/../optimization/optimization_solve_qp_using_smo.h:892:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(A.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics/../optimization/optimization_solve_qp_using_smo.h:893:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(B.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics/../optimization/optimization_solve_qp_using_smo.h:895:29: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(eps > 0);
+                              ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics/../optimization/optimization_solve_qp_using_smo.h:896:34: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(max_iter > 0);
+                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics.h:14:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/function.h:14,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/svm.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/svm_c_linear_dcd_trainer.h:12,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/upper_bound_function.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.h:11,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:2:
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics/lda.h:197:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(true_detections.size() != 0);
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../svm/../statistics/lda.h:198:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(false_detections.size() != 0);
+                                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.h:11:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:2:
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/upper_bound_function.h:41:55: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(relative_noise_magnitude >= 0);
+                                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/upper_bound_function.h:42:40: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(solver_eps > 0);
+                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/upper_bound_function.h:51:55: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(relative_noise_magnitude >= 0);
+                                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/upper_bound_function.h:52:40: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(solver_eps > 0);
+                                         ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.h:11:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:2:
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/upper_bound_function.h:120:42: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(num_points() > 0);
+                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/upper_bound_function.h:121:54: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(x.size() == dimensionality());
+                                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/upper_bound_function.h:239:83: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  DLIB_CASSERT(state.get_alpha().size() == active_constraints.size());
+                                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:22:38: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(X.size() > 0);
+                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:23:44: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(X.nc() == Y.size());
+                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:24:59: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(X.nc() >= (X.nr()+1)*(X.nr()+2)/2);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:95:38: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(X.size() > 0);
+                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:96:44: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(X.nc() == Y.size());
+                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:97:44: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(X.nr()+1 <= X.nc());
+                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:167:46: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(x.size() == y.size());
+                                               ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:168:38: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(x.size() > 0);
+                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:170:58: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  DLIB_CASSERT(anchor.size() == x[i].size());
+                                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:173:102: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(anchor.size()+1 <= x_size && x_size <= (anchor.size()+1)*(anchor.size()+2)/2);
+                                                                                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:214:44: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(samples.size() > 0);
+                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:226:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(samples.size() >= dims+1);
+                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:341:45: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(ub.num_points() > 0);
+                                              ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:380:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(lower.size() == upper.size());
+                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:400:70: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(lower.size() == (long)is_integer_variable.size());
+                                                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:548:51: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(has_been_evaluated() == false);
+                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:556:56: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(i != info->outstanding_evals.end());
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:607:43: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(functions_.size() > 0);
+                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:624:43: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(functions_.size() > 0);
+                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:625:72: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(functions_.size() == initial_function_evals.size());
+                                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:626:51: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(relative_noise_magnitude >= 0);
+                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:680:42: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(num_functions() != 0);
+                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:696:42: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(num_functions() != 0);
+                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:825:44: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(0 <= prob && prob <= 1);
+                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:845:30: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(0 <= eps);
+                               ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:865:32: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(0 <= value);
+                                 ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:892:30: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(0 <= num);
+                               ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_utilities.h:17:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:2:
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:21:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sqrt, sqrt, std::sqrt ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:22:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log, log, std::log ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:23:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log10, log10, std::log10 ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:24:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_exp, exp, std::exp ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:26:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_conj, conj, std::conj ,2);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:28:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_ceil, ceil, std::ceil ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:29:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_floor, floor, std::floor ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:31:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sin, sin, std::sin ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:32:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cos, cos, std::cos ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:33:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tan, tan, std::tan ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:34:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sinh, sinh, std::sinh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:35:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cosh, cosh, std::cosh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:36:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tanh, tanh, std::tanh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:37:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_asin, asin, std::asin ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:38:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_acos, acos, std::acos ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:39:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_atan, atan, std::atan ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:160:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sigmoid, sigmoid, impl::sigmoid, 7);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:161:83: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_round_zeros, round_zeros, impl::round_zeros_eps, 7);
+                                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:162:79: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_round_zeros2, round_zeros, impl::round_zeros, 7);
+                                                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:163:60: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cubed, cubed, impl::cubed, 7);
+                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:164:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_squared, squared, impl::squared, 6);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:165:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sign, sign, impl::sign, 6);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:166:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_pow1, pow, impl::pow1, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:167:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_SM(op_pow2, pow, impl::pow2, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:168:75: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal, reciprocal, impl::reciprocal, 6);
+                                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_math_functions.h:169:87: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal_max, reciprocal_max, impl::reciprocal_max, 6);
+                                                                                        ^
+ [ 14%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/filtering/kalman_filter.cpp.o
+ In file included from /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:6:0:
+ /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.h:180:41: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(meas_noise >= 0);
+                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.h:181:34: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(acc >= 0);
+                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.h:182:43: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(max_meas_dev >= 0);
+                                            ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/function.h:14,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/svm.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/svm_c_linear_dcd_trainer.h:12,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/upper_bound_function.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:7:
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics/../optimization/optimization_solve_qp_using_smo.h:621:41: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(Q_blocks.size() > 0);
+                                          ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/function.h:14,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/svm.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/svm_c_linear_dcd_trainer.h:12,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/upper_bound_function.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:7:
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics/../optimization/optimization_solve_qp_using_smo.h:892:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(A.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics/../optimization/optimization_solve_qp_using_smo.h:893:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(B.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics/../optimization/optimization_solve_qp_using_smo.h:895:29: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(eps > 0);
+                              ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics/../optimization/optimization_solve_qp_using_smo.h:896:34: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(max_iter > 0);
+                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics.h:14:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/function.h:14,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/svm.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/svm_c_linear_dcd_trainer.h:12,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/upper_bound_function.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:7:
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics/lda.h:197:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(true_detections.size() != 0);
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/../svm/../statistics/lda.h:198:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(false_detections.size() != 0);
+                                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization.h:6:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:7:
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/upper_bound_function.h:41:55: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(relative_noise_magnitude >= 0);
+                                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/upper_bound_function.h:42:40: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(solver_eps > 0);
+                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/upper_bound_function.h:51:55: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(relative_noise_magnitude >= 0);
+                                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/upper_bound_function.h:52:40: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(solver_eps > 0);
+                                         ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization.h:6:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:7:
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/upper_bound_function.h:120:42: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(num_points() > 0);
+                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/upper_bound_function.h:121:54: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(x.size() == dimensionality());
+                                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../global_optimization/upper_bound_function.h:239:83: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  DLIB_CASSERT(state.get_alpha().size() == active_constraints.size());
+                                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:20:43: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(sequences.size() != 0);
+                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:22:41: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(vals.size() > 4);
+                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:23:37: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(smoothness >= 0);
+                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:85:38: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(rects.size() > 4);
+                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:86:37: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(smoothness >= 0);
+                                      ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/../algs.h:110:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix_exp.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/matrix.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:2:
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp: In member function ‘void dlib::global_function_search::set_monte_carlo_upper_bound_sample_num(size_t)’:
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:892:24: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+          DLIB_CASSERT(0 <= num);
+                       ~~^~~~
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/../assert.h:156:47: note: in definition of macro ‘DLIB_WORKAROUND_VISUAL_STUDIO_BUGS’
+  #define DLIB_WORKAROUND_VISUAL_STUDIO_BUGS(x) x
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/../assert.h:159:48: note: in expansion of macro ‘DLIBM_CASSERT’
+  #define DLIBM_CASSERT_1_ARGS(exp)              DLIBM_CASSERT(exp,"")
+                                                 ^~~~~~~~~~~~~
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/../matrix/../assert.h:156:47: note: in expansion of macro ‘DLIBM_CASSERT_1_ARGS’
+  #define DLIB_WORKAROUND_VISUAL_STUDIO_BUGS(x) x
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/global_optimization/global_function_search.cpp:892:9: note: in expansion of macro ‘DLIB_CASSERT’
+          DLIB_CASSERT(0 <= num);
+          ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_utilities.h:17:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:6:
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:21:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sqrt, sqrt, std::sqrt ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:22:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log, log, std::log ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:23:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log10, log10, std::log10 ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:24:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_exp, exp, std::exp ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:26:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_conj, conj, std::conj ,2);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:28:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_ceil, ceil, std::ceil ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:29:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_floor, floor, std::floor ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:31:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sin, sin, std::sin ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:32:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cos, cos, std::cos ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:33:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tan, tan, std::tan ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:34:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sinh, sinh, std::sinh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:35:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cosh, cosh, std::cosh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:36:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tanh, tanh, std::tanh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:37:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_asin, asin, std::asin ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:38:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_acos, acos, std::acos ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:39:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_atan, atan, std::atan ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:160:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sigmoid, sigmoid, impl::sigmoid, 7);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:161:83: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_round_zeros, round_zeros, impl::round_zeros_eps, 7);
+                                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:162:79: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_round_zeros2, round_zeros, impl::round_zeros, 7);
+                                                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:163:60: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cubed, cubed, impl::cubed, 7);
+                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:164:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_squared, squared, impl::squared, 6);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:165:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sign, sign, impl::sign, 6);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:166:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_pow1, pow, impl::pow1, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:167:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_SM(op_pow2, pow, impl::pow2, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:168:75: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal, reciprocal, impl::reciprocal, 6);
+                                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_math_functions.h:169:87: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal_max, reciprocal_max, impl::reciprocal_max, 6);
+                                                                                        ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix.h:11:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/filtering/kalman_filter.cpp:6:
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_la.h: In member function ‘void dlib::kalman_filter<states, measurements>::update(const dlib::matrix<double, measurements, 1l>&) [with long int states = 2l; long int measurements = 1l]’:
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_la.h:384:41: warning: ‘e.dlib::row_major_layout::layout<double, 1l, 1l, dlib::memory_manager_stateless_kernel_1<char> >::data[-1l]’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+              f = ((y - z) * (y + z) + (g - h) * (g + h)) / (2 * h * y);
+                                       ~~~^~~~
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_la.h:141:28: note: ‘e.dlib::row_major_layout::layout<double, 1l, 1l, dlib::memory_manager_stateless_kernel_1<char> >::data[-1l]’ was declared here
+          matrix<T,qN,1,MM2> e(n,1);
+                             ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_la.h:384:41: warning: ‘e.dlib::row_major_layout::layout<double, 1l, 1l, dlib::memory_manager_stateless_kernel_1<char> >::data[-1l]’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+              f = ((y - z) * (y + z) + (g - h) * (g + h)) / (2 * h * y);
+                                       ~~~^~~~
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_la.h:141:28: note: ‘e.dlib::row_major_layout::layout<double, 1l, 1l, dlib::memory_manager_stateless_kernel_1<char> >::data[-1l]’ was declared here
+          matrix<T,qN,1,MM2> e(n,1);
+                             ^
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_la.h:412:37: warning: ‘*((void*)& v +-8)’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                          v(j,i) = -x * s + z * c;
+                                   ~~~^~~
+ /clipper/clipper/src/libs/dlib/dlib/filtering/../matrix/matrix_la.h:1421:72: note: ‘*((void*)& v +-8)’ was declared here
+          matrix<typename EXP::type, EXP::NC, EXP::NC,MM1, layout_type > v;
+                                                                         ^
+ [ 14%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/test_for_odr_violations.cpp.o
+ [ 16%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/sockets/sockets_kernel_1.cpp.o
+ [ 16%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/bsp/bsp.cpp.o
+ [ 17%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/dir_nav/dir_nav_kernel_1.cpp.o
+ [ 17%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/dir_nav/dir_nav_kernel_2.cpp.o
+ [ 18%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/dir_nav/dir_nav_extensions.cpp.o
+ [ 18%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/linker/linker_kernel_1.cpp.o
+ [ 20%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/logger/extra_logger_headers.cpp.o
+ [ 20%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/logger/logger_kernel_1.cpp.o
+ [ 21%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/logger/logger_config_file.cpp.o
+ [ 21%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/misc_api/misc_api_kernel_1.cpp.o
+ [ 22%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/misc_api/misc_api_kernel_2.cpp.o
+ [ 22%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/sockets/sockets_extensions.cpp.o
+ [ 24%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/sockets/sockets_kernel_2.cpp.o
+ [ 24%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/sockstreambuf/sockstreambuf.cpp.o
+ [ 25%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/sockstreambuf/sockstreambuf_unbuffered.cpp.o
+ [ 25%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/server/server_kernel.cpp.o
+ [ 26%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/server/server_iostream.cpp.o
+ [ 26%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/server/server_http.cpp.o
+ [ 28%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/threads/multithreaded_object_extension.cpp.o
+ [ 28%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/threads/threaded_object_extension.cpp.o
+ [ 29%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/threads/threads_kernel_1.cpp.o
+ [ 30%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/threads/threads_kernel_2.cpp.o
+ [ 30%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/threads/threads_kernel_shared.cpp.o
+ [ 32%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/threads/thread_pool_extension.cpp.o
+ [ 32%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/threads/async.cpp.o
+ [ 33%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/timer/timer.cpp.o
+ [ 33%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/stack_trace.cpp.o
+ [ 34%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/dnn/cpu_dlib.cpp.o
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:10:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:8:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/gpu_data.h:224:47: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(dest.size() == src.size());
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/gpu_data.h:238:54: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(dest_offset + num <= dest.size());
+                                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/gpu_data.h:239:52: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(src_offset + num <= src.size());
+                                                     ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.h:9:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:8:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:121:52: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                           nr()*nc()*k() == item.nc());
+                                                     ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:133:52: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                           nr()*nc()*k() == item.nc());
+                                                     ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:144:52: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                           nr()*nc()*k() == item.nc());
+                                                     ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:157:65: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(idx < (unsigned long long)num_samples());
+                                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:158:54: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(item.size() == nr()*nc()*k());
+                                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:171:65: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(idx < (unsigned long long)num_samples());
+                                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:172:54: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(item.size() == nr()*nc()*k());
+                                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:189:51: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size() == src.size());
+                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:502:42: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(a.size() == b.size());
+                                           ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:8:0:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.h:438:58: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  DLIB_CASSERT(stride_y > 0 && stride_x > 0);
+                                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.h:439:72: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  DLIB_CASSERT(0 <= padding_y && padding_y < filters.nr());
+                                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.h:440:72: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  DLIB_CASSERT(0 <= padding_x && padding_x < filters.nc());
+                                                                         ^
+ [ 34%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/dnn/tensor_tools.cpp.o
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/interpolation.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:10:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:621:41: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(Q_blocks.size() > 0);
+                                          ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/interpolation.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:10:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:892:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(A.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:893:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(B.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:895:29: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(eps > 0);
+                              ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:896:34: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(max_iter > 0);
+                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics.h:14:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/interpolation.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:10:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics/lda.h:197:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(true_detections.size() != 0);
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/../statistics/lda.h:198:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(false_detections.size() != 0);
+                                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/interpolation.h:10:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:10:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/image_pyramid.h:1167:38: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(rects.size() > 0);
+                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/image_pyramid.h:1168:45: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(0 < scale && scale <= 1);
+                                              ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/image_pyramid.h:1204:38: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(rects.size() > 0);
+                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/image_pyramid.h:1223:38: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(rects.size() > 0);
+                                       ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:10:0:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/interpolation.h:2159:57: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(num_rows(img)*num_columns(img) != 0);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../image_transforms/interpolation.h:2160:53: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(num_rows(img)==num_columns(img));
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:29:66: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  dest.nc() == src1.nc() && src1.nc() == src2.nc() );
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:33:67: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  (src2.num_samples()==1 || src2.num_samples()==MD) );
+                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:94:113: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  DLIB_CASSERT(src2.num_samples() == 1 && src2.nr() == 1 && src2.nc() == 1 && src2.k() == src1.k());
+                                                                                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:131:61: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  DLIB_CASSERT(have_same_dimensions(src1,src2));
+                                                              ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:132:113: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  DLIB_CASSERT(dest.num_samples() == 1 && dest.nr() == 1 && dest.nc() == 1 && dest.k() == src1.k());
+                                                                                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:169:52: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                           scales.nc()          == 1 );
+                                                     ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:423:44: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                    gradient_input.size() > 0);
+                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:453:19: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                    );
+                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:485:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size()==src.size());
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:501:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size()==src1.size());
+                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:502:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size()==src2.size());
+                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:521:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size()==src1.size());
+                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:522:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size()==src2.size());
+                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:523:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size()==src3.size());
+                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:544:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size()==src1.size());
+                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:545:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size()==src2.size());
+                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:546:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size()==src3.size());
+                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:547:60: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(begin <= end && end <= dest.size());
+                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:565:56: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(dest,src));
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:571:51: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                    A.k() ==B.k()  && B.k()==src.k());
+                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:606:56: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(dest,src));
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:607:51: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(A,B));
+                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:611:42: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                           A.k() == src.k());
+                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:645:52: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size() == src1.size());
+                                                     ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:646:52: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size() == src2.size());
+                                                     ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:647:52: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size() == src3.size());
+                                                     ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:648:66: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.num_samples() == src1.num_samples());
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:649:66: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.num_samples() == src2.num_samples());
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:650:66: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.num_samples() == src3.num_samples());
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:651:111: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(rectangle(0,0, dest.size()/dest.num_samples()-1, dest.num_samples()-1).contains(rect));
+                                                                                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:692:56: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                           s.size() == params_grad.size());
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:693:62: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(begin <= end && end <= params.size());
+                                                               ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:792:90: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(averaging_factor==1 || have_same_dimensions(running_means,means));
+                                                                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:793:96: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(averaging_factor==1 || have_same_dimensions(running_variances,invstds));
+                                                                                                 ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:895:47: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(src.num_samples() > 1);
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:896:51: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(num == (long)means.size());
+                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:897:53: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(num == (long)invstds.size());
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:898:51: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(num == (long)gamma.size());
+                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:899:56: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(num == (long)gamma_grad.size());
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:900:55: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(num == (long)beta_grad.size());
+                                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:901:67: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(gradient_input, src));
+                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:902:72: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(gradient_input, src_grad));
+                                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:903:33: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(eps > 0);
+                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1057:90: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(averaging_factor==1 || have_same_dimensions(running_means,means));
+                                                                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1058:96: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(averaging_factor==1 || have_same_dimensions(running_variances,invstds));
+                                                                                                 ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1169:47: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(src.num_samples() > 1);
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1170:55: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(src.k() == (long)means.size());
+                                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1171:57: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(src.k() == (long)invstds.size());
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1172:55: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(src.k() == (long)gamma.size());
+                                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1173:60: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(src.k() == (long)gamma_grad.size());
+                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1174:59: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(src.k() == (long)beta_grad.size());
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1175:67: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(gradient_input, src));
+                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1176:72: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(gradient_input, src_grad));
+                                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1177:33: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(eps > 0);
+                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1280:46: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(a.size() == b.size());
+                                               ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1281:45: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(idx < result.size());
+                                              ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1304:56: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(dest,src));
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1356:57: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(grad,dest));
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1357:67: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(grad,gradient_input));
+                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1399:56: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(dest,src));
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1409:57: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(grad,dest));
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1410:67: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(grad,gradient_input));
+                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1421:56: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(dest,src));
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1431:57: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(grad,dest));
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1432:67: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(grad,gradient_input));
+                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1537:71: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(is_same_object(grad, gradient_input) == false);
+                                                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1603:58: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(is_same_object(dest, src)==false);
+                                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1604:65: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.num_samples() == src.num_samples());
+                                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1605:45: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.k() == src.k());
+                                              ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1631:69: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(is_same_object(grad, gradient_input)==false);
+                                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1632:76: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(gradient_input.num_samples() == grad.num_samples());
+                                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1633:56: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(gradient_input.k() == grad.k());
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1705:43: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(window_width_ > 0);
+                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1706:44: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(window_height_ > 0);
+                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1707:39: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(stride_y_ > 0);
+                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1708:39: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(stride_x_ > 0);
+                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1709:72: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(0 <= padding_y_ && padding_y_ < window_height_);
+                                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1710:71: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(0 <= padding_x_ && padding_x_ < window_width_);
+                                                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1731:43: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(window_width_ > 0);
+                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1732:44: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(window_height_ > 0);
+                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1733:39: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(stride_y_ > 0);
+                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1734:39: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(stride_x_ > 0);
+                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1735:72: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(0 <= padding_y_ && padding_y_ < window_height_);
+                                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1736:71: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(0 <= padding_x_ && padding_x_ < window_width_);
+                                                                        ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1753:42: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(window_width > 0);
+                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1754:43: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(window_height > 0);
+                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1755:38: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(stride_y > 0);
+                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1756:38: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(stride_x > 0);
+                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1757:69: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(0 <= padding_y && padding_y < window_height);
+                                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1758:68: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(0 <= padding_x && padding_x < window_width);
+                                                                     ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1837:67: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(gradient_input,dest));
+                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1838:56: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(have_same_dimensions(src,grad));
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1936:44: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(output.size() != 0);
+                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:1984:44: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(output.size() != 0);
+                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:2034:62: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(is_same_object(output,data) == false);
+                                                               ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:2035:65: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(is_same_object(output,filters) == false);
+                                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:2036:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(filters.k() == data.k());
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:2043:68: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(output.num_samples() == data.num_samples());
+                                                                     ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:2044:61: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(output.k() == filters.num_samples());
+                                                              ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:2045:98: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(output.nr() == 1+(data.nr()+2*last_padding_y-filters.nr())/last_stride_y);
+                                                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:2046:98: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(output.nc() == 1+(data.nc()+2*last_padding_x-filters.nc())/last_stride_x);
+                                                                                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:10:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:6:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/gpu_data.h:224:47: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(dest.size() == src.size());
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/gpu_data.h:238:54: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(dest_offset + num <= dest.size());
+                                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/gpu_data.h:239:52: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(src_offset + num <= src.size());
+                                                     ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.h:6:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:6:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:121:52: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                           nr()*nc()*k() == item.nc());
+                                                     ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:133:52: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                           nr()*nc()*k() == item.nc());
+                                                     ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:144:52: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                           nr()*nc()*k() == item.nc());
+                                                     ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:157:65: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(idx < (unsigned long long)num_samples());
+                                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:158:54: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(item.size() == nr()*nc()*k());
+                                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:171:65: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(idx < (unsigned long long)num_samples());
+                                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:172:54: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(item.size() == nr()*nc()*k());
+                                                       ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:189:51: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              DLIB_CASSERT(dest.size() == src.size());
+                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:502:42: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(a.size() == b.size());
+                                           ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.h:11:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:6:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.h:438:58: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  DLIB_CASSERT(stride_y > 0 && stride_x > 0);
+                                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.h:439:72: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  DLIB_CASSERT(0 <= padding_y && padding_y < filters.nr());
+                                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.h:440:72: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                  DLIB_CASSERT(0 <= padding_x && padding_x < filters.nc());
+                                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:95:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(have_same_dimensions(out,m));
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:96:34: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(is_vector(v));
+                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:99:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(m.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:100:58: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(m.size()/m.num_samples() == v.size());
+                                                           ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:116:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(have_same_dimensions(out,m));
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:117:34: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(is_vector(v));
+                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:120:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(m.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:121:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(m.num_samples() == v.size());
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:139:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(have_same_dimensions(out,m1));
+                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:140:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(have_same_dimensions(out,m2));
+                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:141:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(have_same_dimensions(v1,v2));
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:142:40: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(is_vector(mat(v1)));
+                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:143:51: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(v1.size() == m1.num_samples());
+                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:162:47: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(dest.size() == src.size());
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:178:47: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(dest.size() == src.size());
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:194:47: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(dest.size() == src.size());
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:263:40: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(data.size()%2 == 0);
+                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:297:62: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+              dest.nc() == src1.nc() && src1.nc() == src2.nc() );
+                                                               ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:301:71: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+                      (src2.num_samples()==1 || src2.num_samples()==MD) );
+                                                                        ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_utilities.h:17:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/cpu_dlib.cpp:8:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:21:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sqrt, sqrt, std::sqrt ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:22:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log, log, std::log ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:23:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log10, log10, std::log10 ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:24:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_exp, exp, std::exp ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:26:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_conj, conj, std::conj ,2);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:28:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_ceil, ceil, std::ceil ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:29:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_floor, floor, std::floor ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:31:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sin, sin, std::sin ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:32:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cos, cos, std::cos ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:33:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tan, tan, std::tan ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:34:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sinh, sinh, std::sinh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:35:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cosh, cosh, std::cosh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:36:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tanh, tanh, std::tanh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:37:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_asin, asin, std::asin ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:38:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_acos, acos, std::acos ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:39:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_atan, atan, std::atan ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:160:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sigmoid, sigmoid, impl::sigmoid, 7);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:161:83: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_round_zeros, round_zeros, impl::round_zeros_eps, 7);
+                                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:162:79: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_round_zeros2, round_zeros, impl::round_zeros, 7);
+                                                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:163:60: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cubed, cubed, impl::cubed, 7);
+                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:164:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_squared, squared, impl::squared, 6);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:165:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sign, sign, impl::sign, 6);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:166:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_pow1, pow, impl::pow1, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:167:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_SM(op_pow2, pow, impl::pow2, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:168:75: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal, reciprocal, impl::reciprocal, 6);
+                                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:169:87: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal_max, reciprocal_max, impl::reciprocal_max, 6);
+                                                                                        ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_utilities.h:17:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:6:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:21:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sqrt, sqrt, std::sqrt ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:22:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log, log, std::log ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:23:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log10, log10, std::log10 ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:24:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_exp, exp, std::exp ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:26:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_conj, conj, std::conj ,2);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:28:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_ceil, ceil, std::ceil ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:29:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_floor, floor, std::floor ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:31:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sin, sin, std::sin ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:32:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cos, cos, std::cos ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:33:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tan, tan, std::tan ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:34:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sinh, sinh, std::sinh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:35:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cosh, cosh, std::cosh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:36:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tanh, tanh, std::tanh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:37:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_asin, asin, std::asin ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:38:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_acos, acos, std::acos ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:39:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_atan, atan, std::atan ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:160:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sigmoid, sigmoid, impl::sigmoid, 7);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:161:83: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_round_zeros, round_zeros, impl::round_zeros_eps, 7);
+                                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:162:79: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_round_zeros2, round_zeros, impl::round_zeros, 7);
+                                                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:163:60: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cubed, cubed, impl::cubed, 7);
+                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:164:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_squared, squared, impl::squared, 6);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:165:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sign, sign, impl::sign, 6);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:166:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_pow1, pow, impl::pow1, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:167:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_SM(op_pow2, pow, impl::pow2, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:168:75: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal, reciprocal, impl::reciprocal, 6);
+                                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_math_functions.h:169:87: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal_max, reciprocal_max, impl::reciprocal_max, 6);
+                                                                                        ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/../algs.h:110:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix_exp.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/matrix.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:6:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp: In function ‘void dlib::tt::scale_rows(dlib::tensor&, const dlib::tensor&, const dlib::tensor&)’:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:121:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+          DLIB_CASSERT(m.num_samples() == v.size());
+                       ~~~~~~~~~~~~~~~~^~~~~~~~~~~
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/../assert.h:156:47: note: in definition of macro ‘DLIB_WORKAROUND_VISUAL_STUDIO_BUGS’
+  #define DLIB_WORKAROUND_VISUAL_STUDIO_BUGS(x) x
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/../assert.h:159:48: note: in expansion of macro ‘DLIBM_CASSERT’
+  #define DLIBM_CASSERT_1_ARGS(exp)              DLIBM_CASSERT(exp,"")
+                                                 ^~~~~~~~~~~~~
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/../assert.h:156:47: note: in expansion of macro ‘DLIBM_CASSERT_1_ARGS’
+  #define DLIB_WORKAROUND_VISUAL_STUDIO_BUGS(x) x
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:121:9: note: in expansion of macro ‘DLIB_CASSERT’
+          DLIB_CASSERT(m.num_samples() == v.size());
+          ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp: In function ‘void dlib::tt::scale_rows2(float, dlib::tensor&, const dlib::tensor&, const dlib::tensor&, const dlib::tensor&, const dlib::tensor&)’:
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:143:32: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+          DLIB_CASSERT(v1.size() == m1.num_samples());
+                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/../assert.h:156:47: note: in definition of macro ‘DLIB_WORKAROUND_VISUAL_STUDIO_BUGS’
+  #define DLIB_WORKAROUND_VISUAL_STUDIO_BUGS(x) x
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/../assert.h:159:48: note: in expansion of macro ‘DLIBM_CASSERT’
+  #define DLIBM_CASSERT_1_ARGS(exp)              DLIBM_CASSERT(exp,"")
+                                                 ^~~~~~~~~~~~~
+ /clipper/clipper/src/libs/dlib/dlib/dnn/../matrix/../assert.h:156:47: note: in expansion of macro ‘DLIBM_CASSERT_1_ARGS’
+  #define DLIB_WORKAROUND_VISUAL_STUDIO_BUGS(x) x
+                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/dnn/tensor_tools.cpp:143:9: note: in expansion of macro ‘DLIB_CASSERT’
+          DLIB_CASSERT(v1.size() == m1.num_samples());
+          ^
+ [ 36%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/png.c.o
+ [ 36%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngerror.c.o
+ [ 37%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngget.c.o
+ [ 37%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngmem.c.o
+ [ 38%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngpread.c.o
+ [ 38%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngread.c.o
+ [ 40%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngrio.c.o
+ [ 40%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngrtran.c.o
+ [ 41%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngrutil.c.o
+ [ 41%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngset.c.o
+ [ 42%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngtrans.c.o
+ [ 42%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngwio.c.o
+ [ 44%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngwrite.c.o
+ [ 44%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngwtran.c.o
+ [ 45%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libpng/pngwutil.c.o
+ [ 45%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/adler32.c.o
+ [ 46%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/compress.c.o
+ [ 46%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/crc32.c.o
+ [ 48%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/deflate.c.o
+ [ 49%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/gzclose.c.o
+ [ 49%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/gzlib.c.o
+ [ 50%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/gzread.c.o
+ [ 50%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/gzwrite.c.o
+ [ 52%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/infback.c.o
+ [ 52%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/inffast.c.o
+ [ 53%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/inflate.c.o
+ [ 53%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/inftrees.c.o
+ [ 54%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/trees.c.o
+ [ 54%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/uncompr.c.o
+ [ 56%] Building C object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/zlib/zutil.c.o
+ [ 56%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/image_loader/png_loader.cpp.o
+ [ 57%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/image_saver/save_png.cpp.o
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/image_saver.h:21,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_png.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_png.cpp:9:
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:621:41: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(Q_blocks.size() > 0);
+                                          ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/image_loader.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/png_loader.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/png_loader.cpp:12:
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:621:41: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(Q_blocks.size() > 0);
+                                          ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/image_loader.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/png_loader.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/png_loader.cpp:12:
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:892:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(A.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:893:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(B.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:895:29: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(eps > 0);
+                              ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:896:34: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(max_iter > 0);
+                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/image_saver.h:21,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_png.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_png.cpp:9:
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:892:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(A.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:893:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(B.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:895:29: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(eps > 0);
+                              ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:896:34: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(max_iter > 0);
+                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics.h:14:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/image_loader.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/png_loader.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/png_loader.cpp:12:
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/lda.h:197:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(true_detections.size() != 0);
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/lda.h:198:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(false_detections.size() != 0);
+                                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics.h:14:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/image_saver.h:21,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_png.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_png.cpp:9:
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/lda.h:197:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(true_detections.size() != 0);
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/lda.h:198:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(false_detections.size() != 0);
+                                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_utilities.h:17:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/statistics.h:10,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/image_loader.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/png_loader.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/png_loader.cpp:12:
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:21:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sqrt, sqrt, std::sqrt ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:22:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log, log, std::log ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:23:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log10, log10, std::log10 ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:24:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_exp, exp, std::exp ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:26:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_conj, conj, std::conj ,2);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:28:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_ceil, ceil, std::ceil ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:29:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_floor, floor, std::floor ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:31:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sin, sin, std::sin ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:32:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cos, cos, std::cos ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:33:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tan, tan, std::tan ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:34:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sinh, sinh, std::sinh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:35:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cosh, cosh, std::cosh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:36:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tanh, tanh, std::tanh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:37:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_asin, asin, std::asin ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:38:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_acos, acos, std::acos ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:39:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_atan, atan, std::atan ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:160:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sigmoid, sigmoid, impl::sigmoid, 7);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:161:83: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_round_zeros, round_zeros, impl::round_zeros_eps, 7);
+                                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:162:79: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_round_zeros2, round_zeros, impl::round_zeros, 7);
+                                                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:163:60: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cubed, cubed, impl::cubed, 7);
+                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:164:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_squared, squared, impl::squared, 6);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:165:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sign, sign, impl::sign, 6);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:166:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_pow1, pow, impl::pow1, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:167:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_SM(op_pow2, pow, impl::pow2, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:168:75: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal, reciprocal, impl::reciprocal, 6);
+                                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:169:87: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal_max, reciprocal_max, impl::reciprocal_max, 6);
+                                                                                        ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_utilities.h:17:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/statistics.h:10,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/image_saver.h:21,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_png.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_png.cpp:9:
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:21:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sqrt, sqrt, std::sqrt ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:22:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log, log, std::log ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:23:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log10, log10, std::log10 ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:24:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_exp, exp, std::exp ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:26:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_conj, conj, std::conj ,2);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:28:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_ceil, ceil, std::ceil ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:29:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_floor, floor, std::floor ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:31:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sin, sin, std::sin ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:32:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cos, cos, std::cos ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:33:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tan, tan, std::tan ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:34:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sinh, sinh, std::sinh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:35:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cosh, cosh, std::cosh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:36:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tanh, tanh, std::tanh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:37:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_asin, asin, std::asin ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:38:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_acos, acos, std::acos ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:39:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_atan, atan, std::atan ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:160:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sigmoid, sigmoid, impl::sigmoid, 7);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:161:83: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_round_zeros, round_zeros, impl::round_zeros_eps, 7);
+                                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:162:79: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_round_zeros2, round_zeros, impl::round_zeros, 7);
+                                                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:163:60: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cubed, cubed, impl::cubed, 7);
+                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:164:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_squared, squared, impl::squared, 6);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:165:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sign, sign, impl::sign, 6);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:166:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_pow1, pow, impl::pow1, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:167:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_SM(op_pow2, pow, impl::pow2, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:168:75: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal, reciprocal, impl::reciprocal, 6);
+                                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../matrix/matrix_math_functions.h:169:87: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal_max, reciprocal_max, impl::reciprocal_max, 6);
+                                                                                        ^
+ [ 57%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jcomapi.cpp.o
+ [ 58%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdapimin.cpp.o
+ [ 58%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdapistd.cpp.o
+ [ 60%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdatasrc.cpp.o
+ [ 60%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdcoefct.cpp.o
+ [ 61%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdcolor.cpp.o
+ [ 61%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jddctmgr.cpp.o
+ [ 62%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdhuff.cpp.o
+ [ 62%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdinput.cpp.o
+ [ 64%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdmainct.cpp.o
+ [ 64%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdmarker.cpp.o
+ [ 65%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdmaster.cpp.o
+ [ 65%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdmerge.cpp.o
+ [ 66%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdphuff.cpp.o
+ [ 66%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdpostct.cpp.o
+ [ 68%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdsample.cpp.o
+ [ 69%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jerror.cpp.o
+ [ 69%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jidctflt.cpp.o
+ [ 70%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jidctfst.cpp.o
+ [ 70%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jidctint.cpp.o
+ [ 72%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jidctred.cpp.o
+ [ 72%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jmemmgr.cpp.o
+ [ 73%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jmemnobs.cpp.o
+ [ 73%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jquant1.cpp.o
+ [ 74%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jquant2.cpp.o
+ [ 74%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jutils.cpp.o
+ [ 76%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jcapimin.cpp.o
+ [ 76%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jdatadst.cpp.o
+ [ 77%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jcparam.cpp.o
+ [ 77%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jcapistd.cpp.o
+ [ 78%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jcmarker.cpp.o
+ [ 78%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jcinit.cpp.o
+ [ 80%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jcmaster.cpp.o
+ [ 80%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jcdctmgr.cpp.o
+ [ 81%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jccoefct.cpp.o
+ [ 81%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jccolor.cpp.o
+ [ 82%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jchuff.cpp.o
+ [ 82%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jcmainct.cpp.o
+ [ 84%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jcphuff.cpp.o
+ [ 84%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jcprepct.cpp.o
+ [ 85%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jcsample.cpp.o
+ [ 85%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jfdctint.cpp.o
+ [ 86%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jfdctflt.cpp.o
+ [ 88%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/external/libjpeg/jfdctfst.cpp.o
+ [ 88%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/image_loader/jpeg_loader.cpp.o
+ [ 89%] Building CXX object src/libs/dlib/dlib/CMakeFiles/dlib.dir/image_saver/save_jpeg.cpp.o
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/image_saver.h:21,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_jpeg.cpp:15:
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:621:41: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(Q_blocks.size() > 0);
+                                          ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/image_saver.h:21,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_jpeg.cpp:15:
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:892:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(A.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:893:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(B.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:895:29: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(eps > 0);
+                              ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:896:34: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(max_iter > 0);
+                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics.h:14:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/image_saver.h:21,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_jpeg.cpp:15:
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/lda.h:197:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(true_detections.size() != 0);
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../image_transforms/../statistics/lda.h:198:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(false_detections.size() != 0);
+                                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/image_loader.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/jpeg_loader.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/jpeg_loader.cpp:12:
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:621:41: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(Q_blocks.size() > 0);
+                                          ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization.h:8:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/vector_normalizer_frobmetric.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics.h:13,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/image_loader.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/jpeg_loader.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/jpeg_loader.cpp:12:
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:892:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(A.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:893:35: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(B.size() != 0);
+                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:895:29: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(eps > 0);
+                              ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../optimization/optimization_solve_qp_using_smo.h:896:34: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(max_iter > 0);
+                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics.h:14:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/image_loader.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/jpeg_loader.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/jpeg_loader.cpp:12:
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/lda.h:197:49: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(true_detections.size() != 0);
+                                                  ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/lda.h:198:50: warning: ISO C++11 requires at least one argument for the "..." in a variadic macro
+          DLIB_CASSERT(false_detections.size() != 0);
+                                                   ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_utilities.h:17:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_jpeg.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_saver/save_jpeg.cpp:11:
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:21:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sqrt, sqrt, std::sqrt ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:22:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log, log, std::log ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:23:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log10, log10, std::log10 ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:24:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_exp, exp, std::exp ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:26:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_conj, conj, std::conj ,2);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:28:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_ceil, ceil, std::ceil ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:29:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_floor, floor, std::floor ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:31:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sin, sin, std::sin ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:32:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cos, cos, std::cos ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:33:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tan, tan, std::tan ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:34:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sinh, sinh, std::sinh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:35:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cosh, cosh, std::cosh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:36:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tanh, tanh, std::tanh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:37:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_asin, asin, std::asin ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:38:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_acos, acos, std::acos ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:39:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_atan, atan, std::atan ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:160:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sigmoid, sigmoid, impl::sigmoid, 7);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:161:83: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_round_zeros, round_zeros, impl::round_zeros_eps, 7);
+                                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:162:79: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_round_zeros2, round_zeros, impl::round_zeros, 7);
+                                                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:163:60: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cubed, cubed, impl::cubed, 7);
+                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:164:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_squared, squared, impl::squared, 6);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:165:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sign, sign, impl::sign, 6);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:166:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_pow1, pow, impl::pow1, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:167:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_SM(op_pow2, pow, impl::pow2, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:168:75: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal, reciprocal, impl::reciprocal, 6);
+                                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/image_saver/../matrix/matrix_math_functions.h:169:87: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal_max, reciprocal_max, impl::reciprocal_max, 6);
+                                                                                        ^
+ In file included from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_utilities.h:17:0,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix.h:7,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/statistics.h:10,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics.h:6,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/assign_image.h:8,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/image_loader.h:15,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/jpeg_loader.h:9,
+                  from /clipper/clipper/src/libs/dlib/dlib/image_loader/jpeg_loader.cpp:12:
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:21:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sqrt, sqrt, std::sqrt ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:22:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log, log, std::log ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:23:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_log10, log10, std::log10 ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:24:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_exp, exp, std::exp ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:26:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_conj, conj, std::conj ,2);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:28:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_ceil, ceil, std::ceil ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:29:59: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_floor, floor, std::floor ,7);
+                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:31:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sin, sin, std::sin ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:32:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cos, cos, std::cos ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:33:53: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tan, tan, std::tan ,7);
+                                                      ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:34:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sinh, sinh, std::sinh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:35:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cosh, cosh, std::cosh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:36:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_tanh, tanh, std::tanh ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:37:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_asin, asin, std::asin ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:38:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_acos, acos, std::acos ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:39:56: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_atan, atan, std::atan ,7);
+                                                         ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:160:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sigmoid, sigmoid, impl::sigmoid, 7);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:161:83: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_round_zeros, round_zeros, impl::round_zeros_eps, 7);
+                                                                                    ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:162:79: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_round_zeros2, round_zeros, impl::round_zeros, 7);
+                                                                                ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:163:60: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_cubed, cubed, impl::cubed, 7);
+                                                             ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:164:66: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_squared, squared, impl::squared, 6);
+                                                                   ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:165:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_sign, sign, impl::sign, 6);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:166:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_MS(op_pow1, pow, impl::pow1, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:167:57: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_SM(op_pow2, pow, impl::pow2, 7);
+                                                          ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:168:75: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal, reciprocal, impl::reciprocal, 6);
+                                                                            ^
+ /clipper/clipper/src/libs/dlib/dlib/image_loader/../image_transforms/../statistics/../matrix/matrix_math_functions.h:169:87: warning: extra ‘;’ [-Wpedantic]
+      DLIB_DEFINE_FUNCTION_M(op_reciprocal_max, reciprocal_max, impl::reciprocal_max, 6);
+                                                                                        ^
+ [ 89%] Linking CXX static library libdlib.a
+ [ 89%] Built target dlib
+ Scanning dependencies of target clipper
+ [ 89%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/query_processor.cpp.o
+ [ 90%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/datatypes.cpp.o
+ [ 90%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/metrics.cpp.o
+ [ 92%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/selection_policies.cpp.o
+ [ 92%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/persistent_state.cpp.o
+ [ 93%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/task_executor.cpp.o
+ [ 93%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/rpc_service.cpp.o
+ [ 94%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/timers.cpp.o
+ In file included from /clipper/clipper/src/libclipper/src/rpc_service.cpp:11:0:
+ /clipper/clipper/src/libclipper/include/clipper/logging.hpp: In member function ‘void clipper::rpc::RPCService::receive_message(zmq::socket_t&, boost::bimaps::bimap<int, std::vector<unsigned char> >&, std::unordered_map<std::vector<unsigned char>, std::tuple<clipper::VersionedModelId, int, std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long int, std::ratio<1l, 1000000000l> > > >, std::function<long unsigned int(const std::vector<unsigned char>&)> >&, uint32_t&, std::shared_ptr<redox::Redox>)’:
+ /clipper/clipper/src/libclipper/include/clipper/logging.hpp:219:3: warning: ‘*((void*)& model_rpc_version +4)’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    Logger::get().log_error_formatted(tag, message, args...);
+    ^~~~~~
+ /clipper/clipper/src/libclipper/src/rpc_service.cpp:314:33: note: ‘*((void*)& model_rpc_version +4)’ was declared here
+        boost::optional<uint32_t> model_rpc_version;
+                                  ^~~~~~~~~~~~~~~~~
+ [ 94%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/containers.cpp.o
+ [ 96%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/redis.cpp.o
+ /clipper/clipper/src/libclipper/src/containers.cpp: In member function ‘void clipper::ActiveContainers::remove_container(clipper::VersionedModelId, int)’:
+ /clipper/clipper/src/libclipper/src/containers.cpp:282:10: warning: unused variable ‘initial_size’ [-Wunused-variable]
+    size_t initial_size = containers_[model].size();
+           ^~~~~~~~~~~~
+ [ 96%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/logging.cpp.o
+ [ 97%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/json_util.cpp.o
+ [ 97%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/exceptions.cpp.o
+ [ 98%] Linking CXX static library libclipper.a
+ [ 98%] Built target clipper
+ Scanning dependencies of target query_frontend
+ [100%] Building CXX object src/frontends/CMakeFiles/query_frontend.dir/src/query_frontend_main.cpp.o
+ [100%] Linking CXX executable query_frontend
+ [100%] Built target query_frontend
+ root@linuxkit-025000000001:/clipper/clipper/release# make -j2 query_frontend
