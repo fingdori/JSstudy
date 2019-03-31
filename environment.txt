@@ -1,0 +1,38 @@
+command
+ - docker run -it --network=host -v /Users/sanghyunbak/work/clipper_new:/clipper -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp clipper/dev:0.3.0
+
+clone 0.3.0 version dev docker image
+ - git clone --recursive -b release-0.3 --single-branch https://github.com/ucbrise/clipper.git
+
+query front-end modify and run
+ - modify code
+ - compile
+ - upload image to local repository
+ - modify clipper_admin.py method start_clipper() parameter query-frontend version hard code to 0.3.1
+
+
+ [ 89%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/query_processor.cpp.o
+ [ 90%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/selection_policies.cpp.o
+ [ 92%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/task_executor.cpp.o
+ [ 92%] Building CXX object src/libclipper/CMakeFiles/clipper.dir/src/rpc_service.cpp.o
+ c++: internal compiler error: Killed (program cc1plus)
+ Please submit a full bug report,
+ with preprocessed source if appropriate.
+ See <file:///usr/share/doc/gcc-6/README.Bugs> for instructions.
+ src/libclipper/CMakeFiles/clipper.dir/build.make:134: recipe for target 'src/libclipper/CMakeFiles/clipper.dir/src/selection_policies.cpp.o' failed
+ make[3]: *** [src/libclipper/CMakeFiles/clipper.dir/src/selection_policies.cpp.o] Error 4
+ make[3]: *** Waiting for unfinished jobs....
+ In file included from /clipper/src/libclipper/src/rpc_service.cpp:11:0:
+ /clipper/src/libclipper/include/clipper/logging.hpp: In member function ‘void clipper::rpc::RPCService::receive_message(zmq::socket_t&, boost::bimaps::bimap<int, std::vector<unsigned char> >&, std::unordered_map<std::vector<unsigned char>, std::tuple<clipper::VersionedModelId, int, std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long int, std::ratio<1l, 1000000000l> > > >, std::function<long unsigned int(const std::vector<unsigned char>&)> >&, uint32_t&, std::shared_ptr<redox::Redox>)’:
+ /clipper/src/libclipper/include/clipper/logging.hpp:219:3: warning: ‘*((void*)& model_rpc_version +4)’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    Logger::get().log_error_formatted(tag, message, args...);
+    ^~~~~~
+ /clipper/src/libclipper/src/rpc_service.cpp:314:33: note: ‘*((void*)& model_rpc_version +4)’ was declared here
+        boost::optional<uint32_t> model_rpc_version;
+                                  ^~~~~~~~~~~~~~~~~
+ CMakeFiles/Makefile2:363: recipe for target 'src/libclipper/CMakeFiles/clipper.dir/all' failed
+ make[2]: *** [src/libclipper/CMakeFiles/clipper.dir/all] Error 2
+ CMakeFiles/Makefile2:470: recipe for target 'src/frontends/CMakeFiles/query_frontend.dir/rule' failed
+ make[1]: *** [src/frontends/CMakeFiles/query_frontend.dir/rule] Error 2
+ Makefile:275: recipe for target 'query_frontend' failed
+ make: *** [query_frontend] Error 2
